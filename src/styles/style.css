@@ -14,7 +14,73 @@ body {
 /*
   AppBar
 */
+.btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+ 
+.skip-link:focus {
+   top: 0;
+}
+
+/* .image {
+  background-image:  url("/src/public/images/heros/hero-image_4.jpg");
+  height: relatively ;
+  width: relatively ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  justify-content: center;
+} */
+
+.hero {
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  display: inline-block;
+  text-align: center;
+  background-image:  url("/src/public/images/heros/hero-image_4.jpg");
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: #b67373;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+ 
+.hero p {
+  font-size: 2rem;
+  color: #a56363;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
 .app-bar {
   padding: 8px 16px;
   background-color: white;
@@ -38,6 +104,8 @@ body {
   font-size: 18px;
   padding: 8px;
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .app-bar .app-bar__brand {
@@ -74,6 +142,8 @@ body {
   padding: 8px;
   margin-bottom: 5px;
   width: 100%;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 /*
@@ -94,6 +164,10 @@ main {
   font-weight: normal;
 }
 
+.a {
+  min-width: 44px;
+  min-height: 44px;
+}
 
 /*
   Movies
@@ -150,6 +224,8 @@ main {
 .movie-item .movie-item__content h3 a {
   color: #db0000;
   text-decoration: none;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .movie-item .movie-item__content p {

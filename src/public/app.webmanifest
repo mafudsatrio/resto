@@ -1,0 +1,10 @@
+{
+    "id": "restaurant-pwa-1",
+    "start_url": "./index.html",
+    "name": "Resto keren",
+    "short_name": "Resto keren",
+    "description": "restaurant keren sekali",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#D84315"
+  }

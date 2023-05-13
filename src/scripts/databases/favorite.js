@@ -1,12 +1,12 @@
-import CONFIG from "../globals/config";
 import { openDB } from 'idb';
+import CONFIG from '../globals/config';
 
 const TABLE = 'favorite_resto';
 
 const dbPromise = openDB(CONFIG.DATABASE_NAME, 1, {
-    upgrade(database) {
-        database.createObjectStore(TABLE, { keyPath: 'id' });
-    },
+  upgrade(database) {
+    database.createObjectStore(TABLE, { keyPath: 'id' });
+  },
 });
 
 const GET_ALL = async () => (await dbPromise).getAll(TABLE);
@@ -15,8 +15,8 @@ const STORE = async (resto) => (await dbPromise).add(TABLE, resto);
 const DELETE = async (id) => (await dbPromise).delete(TABLE, id);
 
 export {
-    GET_ALL,
-    GET_DETAIL,
-    STORE,
-    DELETE
+  GET_ALL,
+  GET_DETAIL,
+  STORE,
+  DELETE,
 };
