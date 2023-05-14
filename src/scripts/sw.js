@@ -12,16 +12,15 @@ const assetsToCache = [
 
 
 // event
-self.addEventListener('install', () => {
+self.addEventListener('install', event => {
   event.waitUntil(CacheHelper.cachingAppShell([...assetsToCache]));
 });
 
 // event
-self.addEventListener('activate', () => {
+self.addEventListener('activate', event => {
   event.waitUntil(CacheHelper.deleteOldCache());
 });
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
   event.respondWith(CacheHelper.revalidateCache(event.request));
-  // event.respondWith(fetch(event.request));
 });
