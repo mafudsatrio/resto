@@ -1,20 +1,27 @@
+import CacheHelper from './utils/cache-helper';
+
+const assetsToCache = [
+  './',
+  './icons/favicon.png',
+  './index.html',
+  './favicon.png',
+  './app.bundle.js',
+  './app.webmanifest',
+  './sw.bundle.js',
+];
+
+
 // event
 self.addEventListener('install', () => {
-  console.log('Installing Service Worker ...');
-
-  // TODO: Caching App Shell Resource
+  event.waitUntil(CacheHelper.cachingAppShell([...assetsToCache]));
 });
 
 // event
 self.addEventListener('activate', () => {
-  console.log('Activating Service Worker ...');
-
-  // TODO: Delete old caches
+  event.waitUntil(CacheHelper.deleteOldCache());
 });
 
 self.addEventListener('fetch', (event) => {
-  // console.log(event.request);
-
-  event.respondWith(fetch(event.request));
-  // TODO: Add/get fetch request to/from caches
+  event.respondWith(CacheHelper.revalidateCache(event.request));
+  // event.respondWith(fetch(event.request));
 });
