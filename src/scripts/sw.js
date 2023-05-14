@@ -2,9 +2,8 @@ import CacheHelper from './utils/cache-helper';
 
 const assetsToCache = [
   './',
-  './icons/favicon.png',
+  './images/favicon.png',
   './index.html',
-  './favicon.png',
   './app.bundle.js',
   './app.webmanifest',
   './sw.bundle.js',

@@ -3,6 +3,7 @@ import CONFIG from '../globals/config';
 const CacheHelper = {
   async cachingAppShell(requests) {
     const cache = await this._openCache();
+    console.log(requests)
     cache.addAll(requests);
   },
 
