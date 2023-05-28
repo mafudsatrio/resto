@@ -9,17 +9,16 @@ const assetsToCache = [
   './sw.bundle.js',
 ];
 
-
 // event
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
   event.waitUntil(CacheHelper.cachingAppShell([...assetsToCache]));
 });
 
 // event
-self.addEventListener('activate', event => {
+self.addEventListener('activate', (event) => {
   event.waitUntil(CacheHelper.deleteOldCache());
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(CacheHelper.revalidateCache(event.request));
 });
